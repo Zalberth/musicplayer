@@ -57,6 +57,9 @@ func (appui *AppGUI) Run() {
 	appui.progress.Max = 100
 	appui.progress.SetValue(0)
 
+	// test
+	appui.playBtn.CreateRenderer()
+
 	files, _ := ioutil.ReadDir(appui.appDir + "/" + appui.baseDir)
 	for _, onefile := range files {
 		if onefile.IsDir() {

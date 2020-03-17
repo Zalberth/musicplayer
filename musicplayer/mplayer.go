@@ -76,6 +76,9 @@ func (me *MusicEntry) Play() {
 		case <-me.increaseVol:
 			speaker.Lock()
 			me.volume.Volume += 0.5
+			if me.volume.Volume > 0.001 {
+				me.volume.Volume = 0
+			}
 			speaker.Unlock()
 		case <-me.decreaseVol:
 			speaker.Lock()
